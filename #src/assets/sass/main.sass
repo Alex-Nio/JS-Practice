@@ -1,0 +1,90 @@
+@import "vendor/_reset.sass";
+
+@import "vendor/_fonts.sass";
+
+@import "vendor/_vars.sass";
+
+@import "vendor/_flexframework.sass";
+
+// -----------------------------------------------
+// --------------MAIN SETTINGS--------------------
+// -----------------------------------------------
+
+.container
+	max-width: 1920px
+	padding: 0 40px
+
+.lesson__title
+	font-size: 60px
+	color: $var5
+	text-align: center
+	position: relative
+	text-decoration: underline
+	&::first-letter
+		text-transform: uppercase
+
+.lesson__content
+	margin: 40px 0
+
+.trigger-content
+	display: none
+
+.trigger-actions
+	@include fdrjc_aic
+	margin-top: 20px
+	& button
+		margin: 0 20px
+
+
+// ------------------------------------------------
+// --------------UNIC BUTTONS----------------------
+// ------------------------------------------------
+
+.lesson-btn
+	@include fdrjc_aic
+	min-height: 40px
+	border-radius: 30px
+	font-size: 18px
+	font-weight: bold
+	text-transform: uppercase
+	letter-spacing: 1.5px
+	margin: 0 auto
+	padding: 3px
+	cursor: pointer
+	box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.5)
+	transition: all .5s ease
+
+.btn-pirple
+	width: 100%
+	max-width: 220px
+	height: 100%
+	color: $secondary
+	background-color: #ddbdff
+	&:hover
+		color: $primary
+		background-color: #032149
+		transition: all .5s ease
+
+// -----------------------------------------------
+// --------------HEADER SECTION-------------------
+// -----------------------------------------------
+
+// -----------------------------------------------
+// ---------------MAIN CONTENT--------------------
+// -----------------------------------------------
+
+// -----------------------------------------------
+// -----------------SECTION-----------------------
+// -----------------------------------------------
+
+
+// -----------------------------------------------
+// -----------------FOOTER------------------------
+// -----------------------------------------------
+
+
+// -----------------------------------------------
+// ---------------MEDIA IMPORT--------------------
+// -----------------------------------------------
+
+// @import
