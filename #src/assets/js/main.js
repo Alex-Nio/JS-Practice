@@ -1140,8 +1140,122 @@ console.log( +"Infinity" );
 // -----------------------------------------------
 // -----------------------------------------------
 // -----------------------------------------------
-// Урок 25.
+// Урок 25.Получение элементов на странице.
 
 console.log('=========================================');
 console.log('=*=*=*=*=*=*=*==Lesson 25==*=*=*=*=*=*=*=');
 console.log('=========================================');
+
+
+const box = document.getElementById('box'); // id может быть только один на странице.
+
+console.log(box);
+
+const btns = document.getElementsByTagName('button'); // Получим псевдомассив!
+// const btns = document.getElementsByTagName('button')[1]; // Получим вторую кнопку с псевдомассива по инднексу
+
+// или
+
+// console.log(btns[1]);
+
+const circles = document.getElementsByClassName('circle');
+console.log(circles);
+
+
+// Современные методы:
+
+const hearts = document.querySelectorAll('.heart'); // Точка обязательна! + доступен метод forEach
+console.log(hearts);
+
+// hearts.forEach(item => {
+// 	console.log(item);
+// 	});
+
+const oneHeart = document.querySelector('.heart');
+console.log("Это только один элемент. Первый на странице");
+console.log(oneHeart);
+
+// -----------------------------------------------
+// -----------------------------------------------
+// -----------------------------------------------
+// Урок 26.Действия с элементами на странице.
+
+console.log('=========================================');
+console.log('=*=*=*=*=*=*=*==Lesson 26==*=*=*=*=*=*=*=');
+console.log('=========================================');
+
+
+// Добавление inline-стилей
+// box.style.backgroundColor = 'blue';
+// box.style.borderRadius = '50%';
+
+btns[1].style.borderRadius = '100%';
+
+
+// Назначение стилей для всех сразу
+box.style.cssText = 'background-color: red';
+// box.style.cssText = `background-color: red; width: 30px`;
+
+// С помощью цикла в массиве
+// for (var i = 0; i < hearts.length; i++) {
+// 	hearts[i].style.cssText = `background-color: blue;` 
+// }
+
+// Другой способ. через Метод.
+// hearts.forEach(item => {
+// 	item.style.backgroundColor = 'blue';
+// });
+
+// Создание элементов.
+const div = document.createElement('div');
+// const text = document.craateTextNode('Тут был я');
+
+div.classList.add('black');
+
+// Манипуляции с DOM:
+// Вставляем div в body
+document.body.append(div);
+
+// Вставляем элемент куда нам надо.
+// Находим все селекторы, берем второй элемент из массива и вставляем туда наш div с классом black
+document.querySelectorAll('.lesson__content')[1].append(div); // Вставляем в конец
+document.querySelectorAll('.lesson__content')[1].prepend(div); // Вставляем в начало
+// либо
+document.querySelectorAll('.lesson__content')[1].before(div); // Вставляем в начало
+document.querySelectorAll('.lesson__content')[1].after(div); // Вставляем в конец
+
+// Удаляем элемент
+circles[0].remove();
+
+// Заменяем элемент другим
+hearts[1].replaceWith(circles[0]);
+
+// Не забываем про точку!!!
+const wrapper = document.querySelector('.wrapper');
+
+// Ещё способ перемещения элемента
+wrapper.appendChild(div);
+
+// СТАРЫЕ СПОСОБЫ:
+wrapper.insertBefore(div, hearts[0]);
+
+// Добавление своей структуры в HTML структуру
+div.innerHTML = "<h1>Hellow World!</h1>";
+
+// 2 Варинт. Работает ТОЛЬКО с ТЕКСТОМ! 
+// div.textContent = "qq!"
+
+
+// КОМБО Всего из перечисленного:
+// 1. Указываем элемент
+// 2. Указываем структуру
+div.insertAdjacentHTML('beforebegin', '<h2>Hello</h2>'); // Перед началом
+div.insertAdjacentHTML('afterbegin', '<h2>Hello</h2>'); // После начала
+div.insertAdjacentHTML('beforeend', '<h2>Hello</h2>'); // Перед концом
+div.insertAdjacentHTML('afterend', '<h2>Hello</h2>'); // После конца
+
+
+// -----------------------------------------------
+// -----------------------------------------------
+// -----------------------------------------------
+
